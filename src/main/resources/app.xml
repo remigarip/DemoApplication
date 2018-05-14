@@ -38,12 +38,10 @@
 	
 	<!--  Beans métiers -->
 	
-	<!-- 	<bean id="daoPerson" class="com.adaming.myapp.dao.PersonneDAO"></bean> -->
-	<!-- 	<bean id="servicePersonne" class="com.adaming.myapp.service.PersonneService"> -->
-	<!-- 		<property name="daoPersonne" ref="daoPerson"></property> -->
-	<!-- 	</bean> -->
-		
-	<!-- 	<bean id="daoAgrement" class ="com.adaming.myapp.dao.AgrementDAO"></bean> -->
+	<bean id="personneDao" class="com.garip.myapp.dao.impl.PersonneDaoImpl"></bean>
+	<bean id="personneService" class="com.garip.myapp.service.impl.PersonneServiceImpl">
+		<property name="personneDao" ref="personneDao"></property>
+	</bean>
 	
 	
 	<tx:annotation-driven transaction-manager="transactionManager" />
