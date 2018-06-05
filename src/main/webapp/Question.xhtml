@@ -6,7 +6,7 @@
 	xmlns:f="http://java.sun.com/jsf/core">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1" />
-<title>Ma page d'accueil</title>
+<title>Quizz</title>
 </head>
 <body>
 
@@ -25,13 +25,13 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav mr-auto">
-      <li class="nav-item active">
+      <li class="nav-item">
         <a class="nav-link" href="Accueil.xhtml">Home <span class="sr-only">(current)</span></a>
       </li>
       <li class="nav-item">
         <a class="nav-link" href="Animal.xhtml">Section animal</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="Question.xhtml">Section quizz</a>
       </li>
       <li class="nav-item dropdown">
@@ -72,11 +72,19 @@
 
 
 
-<div style="background-color:aquamarine;height:800px;"> 
+<div id="questionnaire" style="background-color:aquamarine;height:800px;"> 
+	<h:form>
 	
-	<div style="width:45%;padding:20px;display:inline-block;text-align:center">Bienvenue sur l'accueil de vitrine de ma première application.</div>
-	<div style="width:45%;padding:20px;display:inline-block;text-align:center">Les différentes sections sont accessibles 
-	depuis la barre de navigation ci-dessus</div>
+	<div class="questionDiv" style="width:90%;padding:20px;display:inline-block;text-align:center" value="#{questionBean.intituleQuestion}"></div>
+	<br/>
+	<div class="questionDiv" style="width:45%;padding:20px;display:inline-block;text-align:center" value="#{questionBean.reponse1}"></div>
+	<div class="questionDiv" style="width:45%;padding:20px;display:inline-block;text-align:center" value="#{questionBean.reponse2}"></div>
+	<br/>
+	<div class="questionDiv" style="width:45%;padding:20px;display:inline-block;text-align:center" value="#{questionBean.reponse3}"></div>
+	<div class="questionDiv" style="width:45%;padding:20px;display:inline-block;text-align:center" value="#{questionBean.reponse4}"></div>
+	<br/>
+	<h:commandButton value="C'est parti !" type="submit" action="#{questionBean.lancerQuizz}"/>
+	</h:form>
 </div>
 </body>
 </html>

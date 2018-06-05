@@ -17,9 +17,7 @@ public class PersonneDaoImpl implements IPersonneDao{
 	
 	@Override
 	public Personne createPersonne(Personne personne) {
-		System.out.println("Coucou1");
 		entityManager.persist(personne);
-		System.out.println("Coucou2");
 		return personne;
 	}
 

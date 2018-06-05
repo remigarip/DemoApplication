@@ -42,6 +42,14 @@
 	<bean id="personneService" class="com.garip.myapp.service.impl.PersonneServiceImpl">
 		<property name="personneDao" ref="personneDao"></property>
 	</bean>
+	<bean id="animalDao" class="com.garip.myapp.dao.impl.AnimalDaoImpl"></bean>
+	<bean id="animalService" class="com.garip.myapp.service.impl.AnimalServiceImpl">
+		<property name="animalDao" ref="animalDao"></property>
+	</bean>
+	<bean id="questionDao" class="com.garip.myapp.dao.impl.QuestionDaoImpl"></bean>
+	<bean id="questionService" class="com.garip.myapp.service.impl.QuestionServiceImpl">
+		<property name="questionDao" ref="questionDao"></property>
+	</bean>
 	
 	
 	<tx:annotation-driven transaction-manager="transactionManager" />

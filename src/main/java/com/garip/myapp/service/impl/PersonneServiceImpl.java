@@ -16,6 +16,7 @@ public class PersonneServiceImpl implements IPersonneService{
 	private PersonneDaoImpl personneDao;
 
 	@Override
+	@Transactional(readOnly=false)
 	public Personne createPersonne(Personne personne) {
 		return personneDao.createPersonne(personne);
 	}
@@ -36,12 +37,14 @@ public class PersonneServiceImpl implements IPersonneService{
 	}
 
 	@Override
+	@Transactional(readOnly=false)
 	public void deletePersonne(Personne personne) {
 		personneDao.deletePersonne(personne);
 		
 	}
 
 	@Override
+	@Transactional(readOnly=false)
 	public Personne updatePersonne(Personne personne) {
 		return personneDao.updatePersonne(personne);
 	}

@@ -4,6 +4,7 @@ import static org.junit.Assert.fail;
 
 import java.util.Date;
 
+import org.junit.AfterClass;
 import org.junit.BeforeClass;
 import org.junit.Ignore;
 import org.junit.Test;
@@ -21,6 +22,12 @@ public class PersonneServiceTest {
 		System.out.println("Début du Test");
 		ClassPathXmlApplicationContext context= new ClassPathXmlApplicationContext("app.xml");
 		personneService = (IPersonneService) context.getBean("personneService");
+	}
+	
+	@AfterClass
+	public static void afterClass() {
+		System.out.println("Fin du Test");
+		
 	}
 
 	@Test
